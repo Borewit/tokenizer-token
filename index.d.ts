@@ -13,7 +13,7 @@ export interface IGetToken<T> {
    * Decode value from buffer at offset
    * @param buffer - Buffer to read the decoded value from
    * @param offset - Decode offset
-   * @return Decoded value
+   * @return decoded value
    */
   get(buffer: Buffer, offset: number): T;
 }
@@ -24,6 +24,7 @@ export interface IToken<T> extends IGetToken<T> {
    * @param buffer - Buffer to write the encoded value to
    * @param offset - Buffer write offset
    * @param value - Value to decode of type T
+   * @return offset plus number of bytes written
    */
   put(buffer: Buffer, offset: number, value: T): number
 }
