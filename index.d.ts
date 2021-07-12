@@ -2,7 +2,7 @@
  * Read-only token
  * See https://github.com/Borewit/strtok3 for more information
  */
-export interface IGetToken<T> {
+export interface IGetToken<Value, Array extends Uint8Array = Uint8Array> {
 
   /**
    * Length of encoded token in bytes
@@ -15,10 +15,10 @@ export interface IGetToken<T> {
    * @param offset - Decode offset
    * @return decoded value
    */
-  get(array: Uint8Array, offset: number): T;
+  get(array: Array, offset: number): Value;
 }
 
-export interface IToken<T> extends IGetToken<T> {
+export interface IToken<Value, Array extends Uint8Array = Uint8Array> extends IGetToken<Value, Array> {
   /**
    * Encode value to buffer
    * @param array - Uint8Array to write the encoded value to
@@ -26,5 +26,5 @@ export interface IToken<T> extends IGetToken<T> {
    * @param value - Value to decode of type T
    * @return offset plus number of bytes written
    */
-  put(array: Uint8Array, offset: number, value: T): number
+  put(array: Array, offset: number, value: Value): number
 }
