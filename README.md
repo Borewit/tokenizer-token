@@ -5,6 +5,12 @@
 
 TypeScript definition of an [strtok3](https://github.com/Borewit/strtok3) token.
 
+## Installation
+
+```shell
+npm install --save-dev @tokenizer/token
+```
+
 ## Licence
 
 (The MIT License)
